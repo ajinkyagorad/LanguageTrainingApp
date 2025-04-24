@@ -2,6 +2,14 @@
 
 An Android application that helps users learn languages through interactive exercises powered by Google's Gemini AI.
 
+## Screenshots
+
+<div style="display: flex; gap: 10px;">
+  <img src="screenshots/img (1).jpg" alt="Game Screen" width="250"/>
+  <img src="screenshots/img (2).jpg" alt="Chat Interface" width="250"/>
+  <img src="screenshots/img (3).jpg" alt="Settings Screen" width="250"/>
+</div>
+
 ## Features
 
 - Interactive language learning exercises
