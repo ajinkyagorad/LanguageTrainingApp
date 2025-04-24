@@ -19,8 +19,16 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        // Add API key to BuildConfig
-        buildConfigField("String", "GEMINI_API_KEY", "\"AIzaSyBiUCOL9_5cV26oJQ46O26YPkxpPwMFLHY\"")
+        // Add API key to BuildConfig from secrets.properties
+        val properties = java.util.Properties()
+        val secretsFile = rootProject.file("secrets.properties")
+        if (secretsFile.exists()) {
+            properties.load(secretsFile.inputStream())
+            val apiKey = properties.getProperty("GEMINI_API_KEY") ?: ""
+            buildConfigField("String", "GEMINI_API_KEY", "\"$apiKey\"")
+        } else {
+            buildConfigField("String", "GEMINI_API_KEY", "\"\"")
+        }
     }
 
     buildTypes {
